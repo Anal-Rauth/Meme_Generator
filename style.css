@@ -1,0 +1,203 @@
+/* Base Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+body {
+    font-family: 'Comic Neue', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #e7dedb;
+    color: #333;
+    line-height: 1.6;
+    padding: 10px;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 20px 40px;
+    margin: 20px auto;
+    background: linear-gradient(270deg, #ff9a9e, #fad0c4, #fad0c4, #fbc2eb, #a18cd1);
+    background-size: 400% 400%;
+    border-radius: 40px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    color: #fff;
+    animation: gradientFlow 10s ease infinite;
+    max-width: 1000px;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+/* Gradient animation */
+@keyframes gradientFlow {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.navbar:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Title Animation */
+.Topic {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.Topic h1 {
+    font-size: 30px;
+    font-weight: bold;
+    color: #0c0c0c;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 0;
+    animation: typing 3s steps(20, end) infinite alternate;
+}
+
+@keyframes typing {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 18ch;
+    }
+}
+
+/* Button */
+.generate-btn {
+    padding: 12px 28px;
+    background-color: #ff4b2b;
+    color: #fff;
+    border: none;
+    font-size: 16px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-radius: 50px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.generate-btn:hover {
+    background-color: #1b8c7e;
+    color: white;
+    transform: translateY(-2px) scale(1.03);
+}
+
+/* Meme Container */
+.meme-container {
+    max-width: 380px;
+    margin: 20px auto;
+    background-color: wheat;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 0 12px rgb(34, 22, 22);
+    transition: transform 0.3s ease;
+}
+
+.meme-container:hover {
+    transform: scale(1.01);
+}
+
+.meme-title {
+    margin: 10px 0 5px;
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+.author {
+    font-size: 0.9em;
+    margin-top: 5px;
+    margin-bottom: 0;
+    color: #555;
+}
+
+img {
+    width: 100%;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+/* MEDIA QUERIES */
+
+/* Tablets (768px and below) */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        padding: 20px;
+        gap: 12px;
+    }
+
+    .Topic h1 {
+        font-size: 24px;
+    }
+
+    .generate-btn {
+        font-size: 14px;
+        padding: 10px 20px;
+    }
+
+    .meme-container {
+        padding: 16px;
+    }
+}
+
+/* Small Tablets & Large Phones (600px and below) */
+@media (max-width: 600px) {
+    .Topic h1 {
+        font-size: 20px;
+        animation: typing 2.5s steps(18, end) infinite alternate;
+    }
+
+    .generate-btn {
+        font-size: 13px;
+        padding: 8px 18px;
+    }
+
+    .navbar {
+        padding: 16px;
+    }
+
+    .meme-container {
+        max-width: 90%;
+    }
+}
+
+/* Small Phones (400px and below) */
+@media (max-width: 400px) {
+    .Topic h1 {
+        font-size: 18px;
+        animation: typing 2s steps(15, end) infinite alternate;
+    }
+
+    .generate-btn {
+        font-size: 12px;
+        padding: 7px 16px;
+    }
+
+    .navbar {
+        border-radius: 20px;
+        padding: 14px;
+    }
+}
